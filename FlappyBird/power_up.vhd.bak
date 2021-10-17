@@ -1,0 +1,38 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE  IEEE.STD_LOGIC_ARITH.all;
+USE  IEEE.STD_LOGIC_SIGNED.all;
+
+
+ENTITY power_up IS
+	PORT
+		( clk, vert_sync: IN std_logic;
+        pixel_row, pixel_column	: IN std_logic_vector(9 DOWNTO 0);
+		  state : IN STD_LOGIC_VECTOR(1 downto 0);
+		  powerup_address : OUT STD_logic_vector(7 DOWNTO 0);
+		  powerup_on: OUT std_logic);
+END power_up;
+
+architecture behavior of power_up is
+SIGNAL size 					: std_logic_vector(9 DOWNTO 0);  
+SIGNAL powerup_y_pos			: std_logic_vector(9 DOWNTO 0);
+SiGNAL powerup_x_pos			: std_logic_vector(10 DOWNTO 0);
+SIGNAL x_addy, y_addy		: Std_logic_vector(3 DOWNTO 0);
+BEGIN  
+size <= CONV_STD_LOGIC_VECTOR(16,10);
+powerup_x_pos <= CONV_STD_LOGIC_VECTOR(50,11);
+powerup_y_pos <= CONV_STD_LOGIC_VECTOR(30, 10);
+
+x_addy <= pixel_column(3 DOWNTO 0) - powerup_x_pos(3 DOWNTO 0) + CONV_STD_LOGIC_VECTOR(1,4);
+y_addy <= pixel_row(3 DOWNTO 0) - powerup_y_pos(3 DOWNTO 0);
+powerup_address <= x_addy & y_addy;
+
+
+powerup_on <= '1' when (
+								(powerup_x_pos <= ('0' & pixel_column)) and
+								((powerup_x_pos + ('0' & size)) > ('0' & pixel_column)) and
+								(powerup_y_pos <= pixel_row) and
+								((powerup_y_pos + size) > pixel_row)
+								) else '0';
+			
+END behavior;

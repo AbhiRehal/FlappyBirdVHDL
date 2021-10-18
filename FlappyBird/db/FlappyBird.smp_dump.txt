@@ -1,0 +1,16 @@
+
+State Machine - |FlappyBird|FSM:inst6|state_s
+Name state_s.s_over state_s.s_training state_s.s_regular state_s.s_menu 
+state_s.s_menu 0 0 0 0 
+state_s.s_regular 0 0 1 1 
+state_s.s_training 0 1 0 1 
+state_s.s_over 1 0 0 1 
+
+State Machine - |FlappyBird|MOUSE:inst8|mouse_state
+Name mouse_state.INPUT_PACKETS mouse_state.WAIT_CMD_ACK mouse_state.WAIT_OUTPUT_READY mouse_state.LOAD_COMMAND2 mouse_state.LOAD_COMMAND mouse_state.INHIBIT_TRANS 
+mouse_state.INHIBIT_TRANS 0 0 0 0 0 0 
+mouse_state.LOAD_COMMAND 0 0 0 0 1 1 
+mouse_state.LOAD_COMMAND2 0 0 0 1 0 1 
+mouse_state.WAIT_OUTPUT_READY 0 0 1 0 0 1 
+mouse_state.WAIT_CMD_ACK 0 1 0 0 0 1 
+mouse_state.INPUT_PACKETS 1 0 0 0 0 1 

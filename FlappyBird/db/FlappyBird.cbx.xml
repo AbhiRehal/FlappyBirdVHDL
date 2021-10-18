@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="FlappyBird">
+		<CBX_INST_ENTRY INSTANCE_NAME="|FlappyBird|altpll0:inst|altpll:altpll_component" CBX_FILE_NAME="altpll0_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FlappyBird|bird_sprite_rom:inst14|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_on91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FlappyBird|gift_sprite_rom:inst28|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_1o91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FlappyBird|char_rom:inst16|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FlappyBird|char_rom:inst34|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FlappyBird|char_rom:inst38|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
